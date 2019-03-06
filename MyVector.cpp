@@ -2,10 +2,9 @@
 #include<iostream>
 using namespace std;
 
+//æ··å¸ä¿®æ”¹
 
-
-
-//¹¹Ôìº¯Êı
+//æ„é€ å‡½æ•°
 template<typename T>
 MyVector<T>::MyVector(int size)
 {
@@ -13,7 +12,7 @@ MyVector<T>::MyVector(int size)
 	m_len = size;
 }
 
-//Îö¹¹º¯Êı
+//ææ„å‡½æ•°
 template<typename T>
 MyVector<T>::~MyVector()
 {
@@ -26,32 +25,32 @@ MyVector<T>::~MyVector()
 }
 
 
-//¿½±´¹¹Ôìº¯Êı
+//æ‹·è´æ„é€ å‡½æ•°
 template<typename T>
 MyVector<T>::MyVector(const MyVector &obj)
 {
-	//¸ù¾İmyV1µÄ´óĞ¡·ÖÅäÄÚ´æ
+	//æ ¹æ®myV1çš„å¤§å°åˆ†é…å†…å­˜
 	m_len = obj.m_len;
 	m_space = new T[m_len];
-	//cpÊı¾İ
+	//cpæ•°æ®
 	for (int i = 0; i < m_len; i++)
 	{
 		m_space[i] = obj.m_space[i];
 	}
 }
 
-//ÖØÔØ[]
+//é‡è½½[]
 template<typename T>
 T& MyVector<T>::operator[] (int index)
 {
 	return m_space[index];
 }
 
-//ÖØÔØ= a3 = a2 = a1
+//é‡è½½= a3 = a2 = a1
 template<typename T>
 MyVector<T>& MyVector<T>::operator= (const MyVector<T> &obj)
 {
-	//ÏÈ°Ña3µÄ¾ÉµÄÄÚ´æÊÍ·Åµô
+	//å…ˆæŠŠa3çš„æ—§çš„å†…å­˜é‡Šæ”¾æ‰
 	if (m_space != NULL)
 	{
 		delete[] m_space;
@@ -59,7 +58,7 @@ MyVector<T>& MyVector<T>::operator= (const MyVector<T> &obj)
 		m_len = 0;
 	}
 
-	//¸ù¾İa2·ÖÅäÄÚ´æ
+	//æ ¹æ®a2åˆ†é…å†…å­˜
 	m_len = obj.m_len;
 	m_space = new T[m_len];
 
@@ -67,7 +66,7 @@ MyVector<T>& MyVector<T>::operator= (const MyVector<T> &obj)
 	return *this;
 }
 
-//ÖØÔØ<<
+//é‡è½½<<
 template<typename T>
 ostream& operator<< (ostream &out, const MyVector<T> &obj)
 {
